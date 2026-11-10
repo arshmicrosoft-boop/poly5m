@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "poly5m"
+version = "0.1.0"
+description = "Polymarket 5-minute BTC Up/Down trading bot with backtesting, risk engine, and dry-run execution"
+requires-python = ">=3.10"
+dependencies = [
+    "requests",
+    "numpy",
+    "scipy",
+]
+
+[project.optional-dependencies]
+live = ["websockets", "aiohttp", "py-clob-client"]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
